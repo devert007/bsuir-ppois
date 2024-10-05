@@ -1,4 +1,4 @@
-﻿#include "D:/LABY/BSUIR/1laba_PPOIS/Longint.h"
+﻿#include "D:/LABY/BSUIR/1laba_PPOIS/LongInt.h"
 #include <iostream>
 #include <string>
 
@@ -8,12 +8,12 @@ int main() {
     std::string input_first;
     std::cout << "введите первое длинное целое число:\t";
     std::getline(std::cin, input_first);
-    Longint first(input_first);
+    LongInt first(input_first);
     std::cout << "вы ввели первое число, значение:\t" << first.getLong() << '\n';
     std::string input_second;
     std::cout << "введите второе длинное целое число:\t";
     std::getline(std::cin, input_second);
-    Longint second(input_second);
+    LongInt second(input_second);
     std::cout << "вы ввели второе число, значение:\t" << second.getLong() << '\n';
 
     bool flagToMenageOperation{ true };
