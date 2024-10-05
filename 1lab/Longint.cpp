@@ -1,42 +1,42 @@
 
-#include "D:/LABY/BSUIR/1labaPPOIS/Longint.h"
+#include "D:/LABY/BSUIR/1laba_PPOIS/LongInt.h"
 #include <iostream>
 #include <string>
 #include <algorithm>
 const int MAX_INT = 2147483647;
 const int MIN_INT = -2147483647;
 
-std::string Longint::add_string_to_string(const Longint& other)
+std::string LongInt::add_string_to_string(const LongInt& other)
 {
     std::string sumResult;
-    int v_ume = 0;
+    int overflow = 0;
     int maxLength = std::max(int(longNum.size()), int(other.longNum.size()));
     for (int i = 0; i < maxLength; ++i)
     {
         int digitLeft = (i < longNum.size()) ? (longNum[longNum.size() - 1 - i] - '0') : 0;
         int digitRight = (i < other.longNum.size()) ? (other.longNum[other.longNum.size() - 1 - i] - '0') : 0;
-        int sum = digitLeft + digitRight + v_ume;
-        v_ume = sum / 10;
+        int sum = digitLeft + digitRight + overflow;
+        overflow = sum / 10;
         sumResult += std::to_string(sum % 10);
     }
-    if (v_ume > 0)
+    if (overflow > 0)
     {
-        sumResult += std::to_string(v_ume);
+        sumResult += std::to_string(overflow);
     }
     std::reverse(sumResult.begin(), sumResult.end());
     return sumResult;
 }
-std::string Longint::sub_string_from_string(const Longint& other)
+std::string LongInt::sub_string_from_string(const LongInt& other)
 {
     std::string diffResult;
-    int v_ume = 0;
+    int overflow = 0;
     int maxLength = std::max(int(longNum.size()), int(other.longNum.size()));
     for (int i = 0; i < maxLength; ++i)
     {
         int digitLeft = (i < longNum.size()) ? (longNum[longNum.size() - 1 - i] - '0') : 0;
         int digitRight = (i < other.longNum.size()) ? (other.longNum[other.longNum.size() - 1 - i] - '0') : 0;
-        int diff = digitLeft - digitRight - v_ume;
-        v_ume = (diff < 0) ? 1 : 0;
+        int diff = digitLeft - digitRight - overflow;
+        overflow = (diff < 0) ? 1 : 0;
         diffResult += std::to_string((diff + 10) % 10);
     }
     if (isPos)
@@ -50,35 +50,35 @@ std::string Longint::sub_string_from_string(const Longint& other)
 
     return diffResult;
 }
-std::string Longint::multiply_strings(const Longint& other)
+std::string LongInt::multiply_strings(const LongInt& other)
 {
-    Longint result;
+    LongInt result;
     for (int i = 0; i < other.longNum.size(); ++i)
     {
         int digitRight = other.longNum[other.longNum.size() - 1 - i] - '0';
         std::string tempResult;
-        int v_ume = 0;
+        int overflow = 0;
         for (int j = 0; j < longNum.size(); ++j)
         {
             int digitLeft = longNum[longNum.size() - 1 - j] - '0';
-            int product = digitLeft * digitRight + v_ume;
-            v_ume = product / 10;
+            int product = digitLeft * digitRight + overflow;
+            overflow = product / 10;
             tempResult += std::to_string(product % 10);
         }
-        if (v_ume > 0)
+        if (overflow > 0)
         {
-            tempResult += std::to_string(v_ume);
+            tempResult += std::to_string(overflow);
         }
         std::reverse(tempResult.begin(), tempResult.end());
         for (int k = 0; k < i; ++k)
         {
             tempResult += '0';
         }
-        result.longNum = result.add_string_to_string(Longint(tempResult));
+        result.longNum = result.add_string_to_string(LongInt(tempResult));
     }
     return result.longNum;
 }
-std::string Longint::longDivision(const Longint& other)
+std::string LongInt::longDivision(const LongInt& other)
 {
     std::string result;
     int index = 0;
@@ -110,7 +110,7 @@ std::string Longint::longDivision(const Longint& other)
 
 
 
-Longint::Longint(const std::string& str)
+LongInt::LongInt(const std::string& str)
 {
     if (str[0] == '-')
     {
@@ -123,16 +123,16 @@ Longint::Longint(const std::string& str)
         isPos = true;
     }
 }
-void Longint::setLong(const std::string& str) {
+void LongInt::setLong(const std::string& str) {
     longNum = str;
 }
-std::string Longint::getLong()
+std::string LongInt::getLong()
 {
     return (isPos ? "" : "-") + longNum;
 }
-int Longint::size() { return longNum.size(); }
+int LongInt::size() { return longNum.size(); }
 
-void Longint::removeOperationPlus_setMinus( Longint first, Longint other) {
+void LongInt::removeOperationPlus_setMinus( LongInt first, LongInt other) {
     if (first.longNum.size() > other.longNum.size() ||
         (first.longNum.size() == other.longNum.size() && longNum > other.longNum))
     {
@@ -149,7 +149,7 @@ void Longint::removeOperationPlus_setMinus( Longint first, Longint other) {
     }
 }
 
-void Longint::subTwoPositive(const Longint& other) {
+void LongInt::subTwoPositive(const LongInt& other) {
     if (longNum.size() > other.longNum.size() ||
         (longNum.size() == other.longNum.size() && longNum > other.longNum))
     {
@@ -165,7 +165,7 @@ void Longint::subTwoPositive(const Longint& other) {
         isPos = false;
     }
 }
-void Longint::subTwoNegative(const Longint& other) {
+void LongInt::subTwoNegative(const LongInt& other) {
     if (longNum.size() > other.longNum.size() ||
         (longNum.size() == other.longNum.size() && longNum > other.longNum))
     {
@@ -181,7 +181,7 @@ void Longint::subTwoNegative(const Longint& other) {
         longNum = sub_string_from_string(tempString);
     }
 }
-Longint Longint::addLong(const Longint& other)
+LongInt LongInt::addLong(const LongInt& other)
 {
     if (isPos && other.isPos) // x + y
     {
@@ -206,7 +206,7 @@ Longint Longint::addLong(const Longint& other)
     }
     return *this;
 }
-Longint Longint::subLong(const Longint& other)
+LongInt LongInt::subLong(const LongInt& other)
 {
     if (isPos && other.isPos)
         { // x - y
@@ -231,7 +231,7 @@ Longint Longint::subLong(const Longint& other)
     }
     return *this;
 }
-Longint Longint::multlong(const Longint& other)
+LongInt LongInt::multlong(const LongInt& other)
 {
     if ((isPos && other.isPos) || (!isPos && !other.isPos)) {
         isPos = true;
@@ -243,7 +243,7 @@ Longint Longint::multlong(const Longint& other)
     longNum = multiply_strings(other);
     return *this;
 }
-Longint Longint::divLong(const Longint& other)
+LongInt LongInt::divLong(const LongInt& other)
 {
     if ((isPos && other.isPos) || (!isPos && !other.isPos)) {
         isPos = true;
@@ -254,87 +254,87 @@ Longint Longint::divLong(const Longint& other)
 }
 
 
-Longint Longint::addInt(const int& other)
+LongInt LongInt::addInt(const int& other)
 {   if(other)
-    return addLong(Longint(std::to_string(other)));
+    return addLong(LongInt(std::to_string(other)));
 }
-Longint Longint::subInt(const int& other)
+LongInt LongInt::subInt(const int& other)
 {
-    return subLong(Longint(std::to_string(other)));
+    return subLong(LongInt(std::to_string(other)));
 }
-Longint Longint::multInt(const int& other)
+LongInt LongInt::multInt(const int& other)
 {
-    return multlong(Longint(std::to_string(other)));
+    return multlong(LongInt(std::to_string(other)));
 }
-Longint Longint::divInt(const int& other)
+LongInt LongInt::divInt(const int& other)
 {
-    return divLong(Longint(std::to_string(other)));
+    return divLong(LongInt(std::to_string(other)));
 }
 
 
 
-Longint Longint::operator+(const Longint& other) {
-    Longint temp = (isPos) ? longNum : "-" + longNum;
-    return temp.addLong(other);
+LongInt LongInt::operator+(const LongInt& other) {
+    LongInt tempResult = (isPos) ? longNum : "-" + longNum;
+    return tempResult.addLong(other);
 }
-Longint Longint::operator-(const Longint& other) {
-    Longint temp = (isPos) ? longNum : "-" + longNum;
-    return temp.subLong(other);
+LongInt LongInt::operator-(const LongInt& other) {
+    LongInt tempResult = (isPos) ? longNum : "-" + longNum;
+    return tempResult.subLong(other);
 }
-Longint Longint::operator*(const Longint& other) {
-    Longint temp = (isPos) ? longNum : "-" + longNum;
-    return temp.multlong(other);
+LongInt LongInt::operator*(const LongInt& other) {
+    LongInt tempResult = (isPos) ? longNum : "-" + longNum;
+    return tempResult.multlong(other);
 }
-Longint Longint::operator/(const Longint& other) {
-    Longint temp = (isPos) ? longNum : "-" + longNum;
-    return temp.divLong(other);
+LongInt LongInt::operator/(const LongInt& other) {
+    LongInt tempResult = (isPos) ? longNum : "-" + longNum;
+    return tempResult.divLong(other);
 }
 
-Longint Longint::operator+=(const Longint& other) {
+LongInt LongInt::operator+=(const LongInt& other) {
 
     return addLong(other);
 }
-Longint Longint::operator-=(const Longint& other) {
+LongInt LongInt::operator-=(const LongInt& other) {
    
     return subLong(other);
 }
-Longint Longint::operator*=(const Longint& other) {
+LongInt LongInt::operator*=(const LongInt& other) {
    
     return multlong(other);
 }
-Longint Longint::operator/=(const Longint& other) {
+LongInt LongInt::operator/=(const LongInt& other) {
     return divLong(other);
 }
 
 
 
 /*to operation with int */
-Longint Longint::operator+(const int& other) {
-    Longint temp = (isPos) ? longNum : "-" + longNum;
-    return temp.addInt(other);
+LongInt LongInt::operator+(const int& other) {
+    LongInt tempResult = (isPos) ? longNum : "-" + longNum;
+    return tempResult.addInt(other);
 }
-Longint Longint::operator-(const int& other) {
-    Longint temp = (isPos) ? longNum : "-" + longNum;
-    return temp.subInt(other);
+LongInt LongInt::operator-(const int& other) {
+    LongInt tempResult = (isPos) ? longNum : "-" + longNum;
+    return tempResult.subInt(other);
 }
-Longint Longint::operator*(const int& other) {
-    Longint temp = (isPos) ? longNum : "-" + longNum;
-    return temp.multInt(other);
+LongInt LongInt::operator*(const int& other) {
+    LongInt tempResult = (isPos) ? longNum : "-" + longNum;
+    return tempResult.multInt(other);
 }
-Longint Longint::operator/(const int& other) {
-    Longint temp = (isPos) ? longNum : "-" + longNum;
-    return temp.divInt(other);
+LongInt LongInt::operator/(const int& other) {
+    LongInt tempResult = (isPos) ? longNum : "-" + longNum;
+    return tempResult.divInt(other);
 }
-Longint Longint::operator+=(const int& other) {
+LongInt LongInt::operator+=(const int& other) {
     return addInt(other);
 }
-Longint Longint::operator-=(const int& other) {
+LongInt LongInt::operator-=(const int& other) {
     return subInt(other);
 }
-Longint Longint::operator*=(const int& other) {
+LongInt LongInt::operator*=(const int& other) {
     return multInt(other);
 }
-Longint Longint::operator/=(const int& other) {
+LongInt LongInt::operator/=(const int& other) {
     return divInt(other);
 }
 
@@ -342,22 +342,20 @@ Longint Longint::operator/=(const int& other) {
 
 /// /////////////////////////////////////////////////////////
 
-Longint Longint::operator++(int)
+LongInt LongInt::operator++(int)
 {
-    Longint temp(*this);
-    Longint one("1");
+    LongInt one("1");
     addLong(one);
     return *this;
 }
-Longint Longint::operator--(int)
+LongInt LongInt::operator--(int)
 {
-    Longint temp(*this);
-    Longint one("1");
+    LongInt one("1");
     subLong(one);
     return *this;
 }
 
-bool Longint::operator<=(const Longint& other)
+bool LongInt::operator<=(const LongInt& other)
 {
     if (isPos && !other.isPos) 
     {
@@ -376,7 +374,7 @@ bool Longint::operator<=(const Longint& other)
         return longNum <= other.longNum;
     }
 }
-bool Longint::operator<(const Longint& other)
+bool LongInt::operator<(const LongInt& other)
 {
     if (isPos && !other.isPos)
     {
@@ -395,7 +393,7 @@ bool Longint::operator<(const Longint& other)
         return longNum < other.longNum;
     }
 }
-bool Longint::operator>=(const Longint& other)
+bool LongInt::operator>=(const LongInt& other)
 {
     if (isPos && !other.isPos)
     {
@@ -414,7 +412,7 @@ bool Longint::operator>=(const Longint& other)
         return longNum >= other.longNum;
     }
 }
-bool Longint::operator>(const Longint& other)
+bool LongInt::operator>(const LongInt& other)
 {
     if (isPos && !other.isPos)
     {
@@ -433,9 +431,9 @@ bool Longint::operator>(const Longint& other)
         return longNum > other.longNum;
     }
 }
-bool Longint::operator<=(const int& intOther)
+bool LongInt::operator<=(const int& intOther)
 {
-    Longint other = std::to_string(intOther);
+    LongInt other = std::to_string(intOther);
     if (isPos && !other.isPos)
     {
         return false;
@@ -453,9 +451,9 @@ bool Longint::operator<=(const int& intOther)
         return longNum <= other.longNum;
     }
 }
-bool Longint::operator<(const int& intOther)
+bool LongInt::operator<(const int& intOther)
 {
-    Longint other = std::to_string(intOther);
+    LongInt other = std::to_string(intOther);
     if (isPos && !other.isPos)
     {
         return false;
@@ -473,9 +471,9 @@ bool Longint::operator<(const int& intOther)
         return longNum < other.longNum;
     }
 }
-bool Longint::operator>=(const int& intOther)
+bool LongInt::operator>=(const int& intOther)
 {
-    Longint other = std::to_string(intOther);
+    LongInt other = std::to_string(intOther);
     if (isPos && !other.isPos)
     {
         return true;
@@ -493,9 +491,9 @@ bool Longint::operator>=(const int& intOther)
         return longNum >= other.longNum;
     }
 }
-bool Longint::operator>(const int& intOther)
+bool LongInt::operator>(const int& intOther)
 {
-    Longint other = std::to_string(intOther);
+    LongInt other = std::to_string(intOther);
     if (isPos && !other.isPos)
     {
         return true;

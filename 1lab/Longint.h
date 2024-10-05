@@ -1,69 +1,69 @@
 #pragma once
-#ifndef LONGINT_H
-#define LONGINT_H
+#ifndef LongInt_H
+#define LongInt_H
 #include <string>
 
-class Longint {
+class LongInt {
 private:
     std::string longNum;
     bool isPos;
-    std::string add_string_to_string(const Longint& other);
-    std::string sub_string_from_string(const Longint& other);
-    std::string multiply_strings(const Longint& other);
-    std::string longDivision(const Longint& other);
-    void removeOperationPlus_setMinus(Longint first, Longint other);
-    void subTwoPositive(const Longint& other);
-    void subTwoNegative(const Longint& other);
+    std::string add_string_to_string(const LongInt& other);
+    std::string sub_string_from_string(const LongInt& other);
+    std::string multiply_strings(const LongInt& other);
+    std::string longDivision(const LongInt& other);
+    void removeOperationPlus_setMinus(LongInt first, LongInt other);
+    void subTwoPositive(const LongInt& other);
+    void subTwoNegative(const LongInt& other);
 
-    Longint addLong(const Longint& other);
-    Longint subLong(const Longint& other);
-    Longint multlong(const Longint& other);
-    Longint divLong(const Longint& other);
+    LongInt addLong(const LongInt& other);
+    LongInt subLong(const LongInt& other);
+    LongInt multlong(const LongInt& other);
+    LongInt divLong(const LongInt& other);
 
-    Longint addInt(const int& other);
-    Longint subInt(const int& other);
-    Longint multInt(const int& other);
-    Longint divInt(const int& other);
+    LongInt addInt(const int& other);
+    LongInt subInt(const int& other);
+    LongInt multInt(const int& other);
+    LongInt divInt(const int& other);
 
 public:
-    Longint() {};
-    Longint(const std::string& str);
+    LongInt() {};
+    LongInt(const std::string& str);
     int to_integer(){};
     int size();
     void setLong(const std::string&str);
     std::string getLong();
 
-    Longint operator+(const Longint& other);
-    Longint operator-(const Longint& other);
-    Longint operator*(const Longint& other);
-    Longint operator/(const Longint& other);
-    Longint operator+=(const Longint& other);
-    Longint operator-=(const Longint& other);
-    Longint operator*=(const Longint& other);
-    Longint operator/=(const Longint& other);
+    LongInt operator+(const LongInt& other);
+    LongInt operator-(const LongInt& other);
+    LongInt operator*(const LongInt& other);
+    LongInt operator/(const LongInt& other);
+    LongInt operator+=(const LongInt& other);
+    LongInt operator-=(const LongInt& other);
+    LongInt operator*=(const LongInt& other);
+    LongInt operator/=(const LongInt& other);
 
 
-    Longint operator+(const int& other);
-    Longint operator-(const int& other);
-    Longint operator*(const int& other);
-    Longint operator/(const int& other);
-    Longint operator+=(const int& other);
-    Longint operator-=(const int& other);
-    Longint operator*=(const int& other);
-    Longint operator/=(const int& other);
+    LongInt operator+(const int& other);
+    LongInt operator-(const int& other);
+    LongInt operator*(const int& other);
+    LongInt operator/(const int& other);
+    LongInt operator+=(const int& other);
+    LongInt operator-=(const int& other);
+    LongInt operator*=(const int& other);
+    LongInt operator/=(const int& other);
    
-    Longint operator++(int);
-    Longint operator++();
-    Longint operator--(int);
-    Longint operator--();
-    bool operator<=(const Longint& other);
-    bool operator<(const Longint& other);
-    bool operator>=(const Longint& other);
-    bool operator>(const Longint& other);
+    LongInt operator++(int);
+    LongInt operator++();
+    LongInt operator--(int);
+    LongInt operator--();
+    bool operator<=(const LongInt& other);
+    bool operator<(const LongInt& other);
+    bool operator>=(const LongInt& other);
+    bool operator>(const LongInt& other);
     bool operator<=(const int& intOther);
     bool operator<(const int& intOther);
     bool operator>=(const int& intOther);
     bool operator>(const int& intOther);
 };
-#endif // !LONGINT
+#endif // !LongInt
 
