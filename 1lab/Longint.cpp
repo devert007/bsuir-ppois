@@ -70,7 +70,7 @@ std::string LongInt::multiply_strings(const LongInt& other)
             tempResult += std::to_string(overflow);
         }
         std::reverse(tempResult.begin(), tempResult.end());
-        for (int k = 0; k < i; ++k)
+        for (int j = 0; j < i; ++j)
         {
             tempResult += '0';
         }
