@@ -4,6 +4,7 @@
 class MIG :public Order {
 private:
 	Company company;
+	string seial_number = "AB1234567890-CDE";
 public:
 	MIG() {
 		setName("MIG");
@@ -13,5 +14,15 @@ public:
 	}
 	string getSupplierName() {
 		return this->company.getName();
+	}
+	string getIdOfFarm() {
+		return this->seial_number;
+	}
+	void help_without_pain() {
+		cout << "ѕриобретите MIG. ¬ы больше не почувствуете боль в животе и нижних конечност€х\n";
+	}
+	void complete_impact() override
+	{
+		help_without_pain();
 	}
 };

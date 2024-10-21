@@ -1,17 +1,31 @@
 #pragma once
 #include "D:\LABY\BSUIR\PPOIS\2laba_PPOIS\Order.h"
-class ASPIRIN :public Order {
+class Aspirin :public Order {
 private:
 	Company company;
+	string seial_number = "XYZ-1234567890-ABC";
+	int data = 19102024;
 public:
-	ASPIRIN() {
+	Aspirin() {
 		setName("ASPIRIN");
 		setPrice(40);
 		setInfoAboutOrder("Aspirin — это лекарственный препарат, который содержит аспирин, один из основных нестероидных противовоспалительных препаратов (NSAIDs), ответственных за снижение болевых ощущений и уменьшение инфекционных заболеваний.\n\nОсновные преимущества Aspirin:\n1. Снижение болевого синдрома: Aspirin помогает снизить болевые ощущения при различных заболеваниях, путем уменьшения выделения гистаминовых молекул, таких как продукты гистаминового алкалоида, которые являются основными причинами болевого синдрома.\n2. Поддержание температуры тела: Aspirin помогает поддерживать температуру тела в нормальном диапазоне, поскольку он снижает выделение веществ, ответственных за повышение температуры, таких как адреналин и кортизол.\n3. Предотвращение реакции паралича: Aspirin может помочь предотвратить реакции паралича, поскольку он снижает уровень гистамина в мозге, что приводит к более плавной и точной работе нервной системы.");
 		this->company.setName("TyanShiFarm");
 	}
+	void helpAfterParty() {
+		cout << "Вам станет легче после вчерашней вечеринки, чувствуйте себя огурчиком после препарата "<<this->getName()<<"\n";
+	}
 	string getSupplierName() {
 		return this->company.getName();
 	}
+	int getTheLastDayOfFarm() {
+		int theLastDayOfFarm = this->data + 1;
+		return theLastDayOfFarm;
+	}
+	void complete_impact() override
+	{
+		helpAfterParty();
+	}
+
 };
 

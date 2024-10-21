@@ -3,6 +3,7 @@
 class HeadFlex :public Order {
 private:
 	Company company;
+	string seial_number = "123-456-7890-ABC-DEF";
 public:
 	HeadFlex() {
 		setName("HeadFlex");
@@ -22,5 +23,12 @@ public:
 	}
 	string getSupplierName() {
 		return this->company.getName();
+	}
+	void recomendations() {
+		cout << "Вам следует обратиться в нашему поставщику " << this->getSupplierName() << "за консультацией и приобрести " << this->getName()<<'\n';
+	}
+	void complete_impact() override
+	{
+		recomendations();
 	}
 };

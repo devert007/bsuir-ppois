@@ -31,6 +31,9 @@ public:
 	void setInfoAboutOrder(string info) {
 		this->info_about_order=info;
 	}
+	virtual void complete_impact() {
+		cout << "this is parent method\n";
+	};
 };
 
 #endif

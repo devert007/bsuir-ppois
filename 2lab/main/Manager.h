@@ -17,5 +17,7 @@ private:
 	Order sayHelloAndMakeOrder();
 public:
 	Manager();
+	Manager(bool isWithHello);
 	Order sendAconfirmationToClient();
+	void getAnFarmAndCompare(int numberOfFarm);
 };

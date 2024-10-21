@@ -26,6 +26,7 @@ public:
 	void setClientEmail(string new_email);
 	void setClientCash(int new_cash);
 	void doMainOrder();
+	
 };
 
 

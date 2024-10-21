@@ -1,14 +1,24 @@
 #pragma once
 #include "D:\LABY\BSUIR\PPOIS\2laba_PPOIS\Order.h"
-class DICLOFENAC :public Order {
+class Diclofenac :public Order {
 private:
 	Company company;
+	string seial_number = "XYZ-9876543210-1234567890-ABC";
+
 public:
-	DICLOFENAC() {
+	Diclofenac() {
 		setName("DICLOFENAC");
 		setPrice(40);
 		setInfoAboutOrder("Diclofenac — это лекарственный препарат, который содержит диклофенак, один из основных нестероидных противовоспалительных препаратов (NSAIDs), ответственных за снижение болевых ощущений и уменьшение инфекционных заболеваний.\n\nОсновные преимущества Diclofenac:\n1. Снижение болевого синдрома: Diclofenac помогает снизить болевые ощущения при различных заболеваниях, путем уменьшения выделения гистаминовых молекул, таких как продукты гистаминового алкалоида, которые являются основными причинами болевого синдрома.\n2. Улучшение координации движений: Diclofenac может помочь улучшить координацию движений, поскольку он снижает уровень гистамина в мозге, что приводит к более плавной и точной работе нервной системы.\n3. Поддержание температуры тела: Diclofenac помогает поддерживать температуру тела в нормальном диапазоне, поскольку он снижает выделение веществ, ответственных за повышение температуры, таких как адреналин и кортизол.");
 		this->company.setName("BelAptekaFarm");
+	}
+	void destroy_headache() {
+		cout << "Примите "<< this->getName()<<". Ждите когда подействует препарат, в течении получаса боль снизится\n";
+	}
+
+	void complete_impact() override
+	{
+		destroy_headache();
 	}
 	string getSupplierName() {
 		return this->company.getName();

@@ -3,7 +3,7 @@
 #include <string>
 #include <iostream>
 Order Manager::compare_an_order(int indexOfOrder) {
-	Order order_to_return;
+	
 	if (indexOfOrder == 1) {
 		MIG mig;
 		return mig;
@@ -13,27 +13,27 @@ Order Manager::compare_an_order(int indexOfOrder) {
 		return headFlex;
 	}
 	else if (indexOfOrder == 3) {
-		IBYPROFEN ibyprofen;
+		Ibuprofen ibyprofen;
 		return ibyprofen;
 	}
 	else if (indexOfOrder == 4) {
-		ANTIGISTAT antigistat;
+		Antigistat antigistat;
 		return antigistat;
 	}
 	else if (indexOfOrder == 5) {
-		ACETAMINOPHEN ACETAMINOPHEN;
+		Acetaminophen ACETAMINOPHEN;
 		return ACETAMINOPHEN;
 	}
 	else if (indexOfOrder == 6) {
-		ASPIRIN aspirin;
+		Aspirin aspirin;
 		return aspirin;
 	}
 	else if (indexOfOrder == 7) {
-		DICLOFENAC diclofenac;
+		Diclofenac diclofenac;
 		return diclofenac;
 	}
 	else if (indexOfOrder == 8) {
-		KETOROLAC ketorolac;
+		Ketorolac ketorolac;
 		return ketorolac;
 	}
 }
@@ -59,6 +59,13 @@ Manager::Manager() {
 	this->setName("Olesia");
 	this->order_of_client = sayHelloAndMakeOrder();
 }
+Manager::Manager(bool isWithHello) {
+	if (!isWithHello)
+	{
+		this->setName("Varvara");
+		this->setAge(23);
+	}
+}
 Order Manager::sendAconfirmationToClient() {
 	std::cout << "Ваш заказ: " << this->order_of_client.getName() << ".Цена: " << this->order_of_client.getPrice() << '\n';
 	std::cout << "Все верно?(1-верно, 0-неверно): ";
@@ -73,4 +80,41 @@ Order Manager::sendAconfirmationToClient() {
 		emptyOrder.setName("");
 		return emptyOrder;
 	}
+}
+void Manager::getAnFarmAndCompare(int numberOfFarm) {
+
+	if (numberOfFarm == 1) {
+		MIG mig;
+	 mig.complete_impact();
+	}
+	else if (numberOfFarm == 2) {
+		HeadFlex headFlex;
+		 headFlex.complete_impact();
+	}
+	else if (numberOfFarm == 3) {
+		Aspirin aspirin;
+		aspirin.complete_impact();
+	
+	}
+	else if (numberOfFarm == 4) {
+		Antigistat antigistat;
+		antigistat.complete_impact();
+	}
+	else if (numberOfFarm == 5) {
+		Acetaminophen ACETAMINOPHEN;
+		ACETAMINOPHEN.complete_impact();
+	}
+	else if (numberOfFarm == 6) {
+		Ibuprofen ibyprofen;
+		ibyprofen.complete_impact();
+	}
+	else if (numberOfFarm == 7) {
+		Diclofenac diclofenac;
+		diclofenac.complete_impact();
+	}
+	else if (numberOfFarm == 8) {
+		Ketorolac ketorolac;
+	 ketorolac.complete_impact();
+	}
+;
 }

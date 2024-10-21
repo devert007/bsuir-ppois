@@ -1,17 +1,23 @@
 #pragma once
 #include "D:\LABY\BSUIR\PPOIS\2laba_PPOIS\Order.h"
-class IBYPROFEN :public Order {
+class Ibuprofen :public Order {
 private:
 	Company company;
+	string seial_number = "1234567890-ABCDEF";
+
 public:
-	IBYPROFEN() {
-		setName("IBYPROFEN");
+	Ibuprofen() {
+		setName("IBUPROFEN");
 		setPrice(15);
 		setInfoAboutOrder("Ibuprofen Ч это лекарственный препарат, который содержит ибупрофен, один из основных нестероидных противовоспалительных препаратов (NSAIDs), ответственных за снижение болевых ощущений и уменьшение инфекционных заболеваний.\n\nќсновные преимущества Ibuprofen:\n1. —нижение болевого синдрома: Ibuprofen помогает снизить болевые ощущени€ при различных заболевани€х, путем уменьшени€ выделени€ гистаминовых молекул, таких как продукты гистаминового алкалоида, которые €вл€ютс€ основными причинами болевого синдрома.\n2. ѕоддержание температуры тела: Ibuprofen помогает поддерживать температуру тела в нормальном диапазоне, поскольку он снижает выделение веществ, ответственных за повышение температуры, таких как адреналин и кортизол.");
 		this->company.setName("IndiaTea");
 	}
 	string getSupplierName() {
 		return this->company.getName();
+	}
+	void complete_impact() override
+	{
+		cout << "¬ам станет гораздо лучше после применени€ препарата " <<this->getName()<<" в течение 1 часа после его приема.\n";
 	}
 };
 

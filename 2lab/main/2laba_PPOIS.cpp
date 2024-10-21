@@ -23,12 +23,13 @@ int main()
        cout << "|Cash: " << new_client.getCash() << "\n";
        cout << "\t\t\tВыберите необходимую вам операцию\n";
        cout << "1. Узнать детали компании\n";
-        cout << "2. Добавить в корзину\n";
-        cout << "3. Просмотреть корзину\n";
-        cout << "4. Узнать информацию о лекарственных препаратах\n";
-        cout << "5. Удалить из корзины\n";
-        cout << "6. Сделать заказ\n";
-        cout << "7. Завершить сеанс\n";
+       cout << "2. Указать свои симптомы\n";
+        cout << "3. Добавить в корзину\n";
+        cout << "4. Просмотреть корзину\n";
+        cout << "5. Узнать информацию о лекарственных препаратах\n";
+        cout << "6. Удалить из корзины\n";
+        cout << "7. Сделать заказ\n";
+        cout << "8. Завершить сеанс\n";
        
         cin >> chooseClient;
         switch (chooseClient)
@@ -47,13 +48,28 @@ int main()
             }
             break;
         case 2:
+        {cout << "Укажите номер вашего потенциального симптома и мы подберем вам нужное лекарство:\n";
+        cout << "1.Болит голова \n";
+        cout << "2.Повреждение кожного покрова.Устранение инфекций из крови.Противоспалительное\n";
+        cout << "3.Болит голова после выходного вечера. Отравление, головокружение.\n";
+        cout << "4.Сильное сокращение мышечных волокон, сильное напряжение в мышцахю\n";
+        cout << "5.Сильная головная боль в лобной части\n";
+        cout << "6.Боли в суставах, мышцах, головные боли\n";
+        cout << "7.Вирусные инфекции, бактериальные заболевания\n";
+        cout << "8.Боли в различных частях цела, мышечные боли, боли в животе и нижних конечностях.\n";
+        int choose_client_about_disease;
+        cin >> choose_client_about_disease;
+        Manager manager1(false);
+        manager1.getAnFarmAndCompare(choose_client_about_disease);
+        } break;
+        case 3:
         {Manager manager;
         Order orderOfClient;
         orderOfClient = manager.sendAconfirmationToClient();
         new_client.addBasket(orderOfClient); }
             system("cls");
             break;
-        case 3: {
+        case 4: {
             vector<Order>basket = new_client.getBasketList();
             std::cout << "Ваша корзина:\n";
             for (int i = 0; i < basket.size(); i++)
@@ -61,7 +77,7 @@ int main()
                 cout << i + 1 << ") " << basket[i].getName() << "\nPrice:" << basket[i].getPrice() << '\n';
             }}
             break;
-        case 4:
+        case 5:
             cout << "1. MIG\n";
             cout << "2. HeadFlex\n";
             cout << "3. IBYPROFEN\n";
@@ -82,38 +98,38 @@ int main()
                 cout << head.getInfoAboutOrder()<<"\nЦЕНА: " << head.getPrice()<<"\nПоставщик: "<<head.getSupplierName() << '\n';
             }
             else if (indexOfPotencialOrder == 4) {
-                ANTIGISTAT anti;
+                Antigistat anti;
                 cout << anti.getInfoAboutOrder() << "\nЦЕНА: " << anti.getPrice() << "\nПоставщик: " << anti.getSupplierName() << '\n';
             }
             else if (indexOfPotencialOrder == 3) {
-                IBYPROFEN iby;
+                Ibuprofen iby;
                 cout << iby.getInfoAboutOrder() << "\nЦЕНА: " << iby.getPrice() << "\nПоставщик: " << iby.getSupplierName() << '\n';
             }
             else if (indexOfPotencialOrder == 5) {
-                ACETAMINOPHEN aceta;
+                Acetaminophen aceta;
                 cout << aceta.getInfoAboutOrder() << "\nЦЕНА: " << aceta.getPrice() << "\nПоставщик: " << aceta.getSupplierName() << '\n';
             }
             else if (indexOfPotencialOrder == 6) {
-                ASPIRIN aspi;
+                Aspirin aspi;
                 cout << aspi.getInfoAboutOrder() << "\nЦЕНА: " << aspi.getPrice() << "\nПоставщик: " << aspi.getSupplierName() << '\n';
             }
             else if(indexOfPotencialOrder==7){
-                DICLOFENAC diclo;
+                Diclofenac diclo;
                 cout << diclo.getInfoAboutOrder() << "\nЦЕНА: " << diclo.getPrice() << "\nПоставщик: " << diclo.getSupplierName() << '\n';
             }
             else if (indexOfPotencialOrder == 8) {
-                KETOROLAC keto;
+                Ketorolac keto;
                 cout << keto.getInfoAboutOrder() << "\nЦЕНА: " << keto.getPrice() << "\nПоставщик: " << keto.getSupplierName() << '\n';
             }
             break;
-        case 5:
+        case 6:
             new_client.deleteFromBasket();
             break;
-        case 6:
+        case 7:
             new_client.doMainOrder();
 
             break;
-        case 7:
+        case 8:
             flagForMenuLoop = false;
         default:
             break;
