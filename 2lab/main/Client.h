@@ -21,7 +21,7 @@ public:
 	int getCash();
 	void addBasket(Order orderOfClient);
 	vector<Order> getBasketList();
-	void deleteFromBasket();
+	void deleteFromBasket(int choose_client);
 	void setClientName(string new_name);
 	void setClientEmail(string new_email);
 	void setClientCash(int new_cash);

@@ -2,6 +2,8 @@
 #include <vector>
 #include <string>
 #include <iostream>
+Client::Client() {
+}
 Client :: Client(RegMenu menu) {
 
 	menu.makeRegistration();
@@ -9,8 +11,7 @@ Client :: Client(RegMenu menu) {
 	setName(menu.getName());
 	this->cash = menu.getCash();
 }
-Client::Client() {
-}
+
 string Client::getEmail() {
 	return this->email;
 }
@@ -24,13 +25,10 @@ vector<Order> Client::getBasketList() {
 	
 	return this->basket;
 }
-void Client::deleteFromBasket() {
-	cout << "Выберите номер препарата который вы хотите удалить из корзины:\n ";
-	this->getBasketList();
-	int chooseClient;
-	cin >> chooseClient;
-	this->basket.erase(basket.begin() + chooseClient - 1);
-	cout << "Успешно удалено\n";
+void Client::deleteFromBasket(int choose_client=1) {
+
+	this->basket.erase(basket.begin() + choose_client - 1);
+
 }
 void Client::doMainOrder() {
 
@@ -39,7 +37,7 @@ void Client::doMainOrder() {
 		sumOfAllBusket += basket[i].getPrice();
 	}
 	if (sumOfAllBusket > cash) {
-		cout << "У вас недостаточно средств. Пополните счет или удалите что либо из корзины." << '\n';
+		cout << "У вас недостаточно средств. Пополните счет или удалите что либо из корзины.\n";
 		return;
 	}
 	else if (basket.size() != 0) {
