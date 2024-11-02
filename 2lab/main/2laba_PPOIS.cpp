@@ -2,7 +2,8 @@
 #include <iostream>
 #include <string>
 using namespace std;
-#include "D:\LABY\BSUIR\PPOIS\2laba_PPOIS\Client.cpp"
+#include "D:\LABY\BSUIR\PPOIS\2laba_PPOIS\Client.h"
+
 #include "D:\LABY\BSUIR\PPOIS\2laba_PPOIS\Manager.h"
 #include <vector>
 #include "Company.h"
@@ -123,11 +124,15 @@ int main()
             }
             break;
         case 6:
-            new_client.deleteFromBasket();
+            cout << "Выберите номер препарата который вы хотите удалить из корзины:\n ";
+            new_client.getBasketList();
+            int chooseClient;
+            cin >> chooseClient;
+            new_client.deleteFromBasket(chooseClient);
+            cout << "Успешно удалено\n";
             break;
         case 7:
             new_client.doMainOrder();
-
             break;
         case 8:
             flagForMenuLoop = false;
