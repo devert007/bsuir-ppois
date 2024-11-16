@@ -4,7 +4,7 @@ project(MyProject)
 set(CMAKE_CXX_STANDARD 17)
 add_subdirectory(googletest)
 
-add_executable(OrientedList main.cpp
+add_executable(Oriented main.cpp
         OrientedGraph.cpp
         OrientedGraph.h
         VertexIterator.cpp
@@ -16,12 +16,12 @@ add_executable(OrientedList main.cpp
         AdjacentVertexIterator.cpp
         AdjacentVertexIterator.h)
 
-add_executable(OrientedListTest
+add_executable(OrientedTest
         test/testOrientedGraph.cpp
         OrientedGraph.h
         OrientedGraph.cpp
-        test/testAdjacentVertexIterator.cpp
-        AdjacentVertexIterator.h
+        test/testVertexAdjacentIterator.cpp
+        VertexAdjacentIterator.h
         test/testEdgeIncidentIterator.cpp
         EdgeIncidentIterator.h
         test/testEdgeIterator.cpp
@@ -29,9 +29,9 @@ add_executable(OrientedListTest
         test/testVertexIterator.cpp
         VertexIterator.h)
 
-target_link_libraries(OrientedList gtest gtest_main)
+target_link_libraries(Oriented gtest gtest_main)
 
 enable_testing()
 
-add_test(NAME OrientedListTest COMMAND OrientedListTest)
+add_test(NAME OrientedTest COMMAND OrientedTest)
 add_executable(my_executable main.cpp)
