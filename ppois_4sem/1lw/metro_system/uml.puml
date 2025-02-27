@@ -1,0 +1,88 @@
+@startuml Metro_System_Class_Diagram
+
+class MetroSystem {
+  -stations: List[Station]
+  -branches: List
+  -passenger: Passenger
+  +add_station(): Station
+  +find_station(station_name: str): Station
+  +create_passenger(name: str, money: int)
+  +save_state(filename: str)
+  +load_state(filename: str)
+}
+
+class Station {
+  -name: str
+  -platform: Platform
+  -schedule: Schedule
+  -is_open: bool
+  -turnstyle: TurnStyle
+  -train: Train
+  +update_station_status()
+  +train_arrives()
+  +train_departs()
+}
+
+class Platform {
+  -is_closed: bool
+  -is_empty: bool
+  -current_train: Train
+  +open_platform()
+}
+
+class Schedule {
+  -arrival_times: List[datetime]
+  -last_departure: datetime
+  +update_schedule(train: Train)
+  +train_departure()
+  +train_arrival()
+  +show_next_arrival(): int
+}
+
+class TurnStyle {
+  -open: bool
+  +toggle_open(): bool
+  +check_ticket(passenger: Passenger): bool
+}
+
+class Train {
+  -speed: int
+  -distance: int
+  -is_running: bool
+  -current_station: Station
+  +start_train()
+  +stop_train()
+  +boarding_passengers(): bool
+  +calculate_arrival_time(): int
+}
+
+class Passenger {
+  -name: str
+  -money: int
+  -has_ticket: bool
+  -ticket: Ticket
+  -metro_system: MetroSystem
+  -station: Station
+  -progress: int
+  +go_to_metro_station(station_name: str)
+  +buy_ticket()
+  +go_through_turnstyle()
+  +check_schedule_and_board()
+}
+
+class Ticket {
+  -price: int
+  -is_valid: bool
+}
+
+MetroSystem o--> "many" Station
+MetroSystem o--> "0..1" Passenger
+Station o--> "1" Platform
+Station o--> "1" Schedule
+Station o--> "1" TurnStyle
+Station o--> "1" Train
+Passenger o--> "1" Ticket
+Passenger o--> "1" Station
+Train --> "0..1" Station : current_station
+
+@enduml
