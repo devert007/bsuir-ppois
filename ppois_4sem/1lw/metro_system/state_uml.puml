@@ -1,0 +1,42 @@
+@startuml State 
+
+[*] --> InitialState
+InitialState: create system object
+InitialState->LoadedState: load state
+InitialState->EmptyState: create new system
+state LoadedState{
+    [*] --> MetroSystem
+    MetroSystem:Add Station
+    MetroSystem:Create Passenger
+    MetroSystem:Go to station
+    MetroSystem:Buy Ticket
+    MetroSystem:Pass turnstile
+    MetroSystem:Board Train
+}
+
+LoadedState --> [*] : save state
+
+state EmptyState{
+  [*] --> Metrosystem
+    Metrosystem:Add Station
+    Metrosystem:Create Passenger
+    Metrosystem:Go to station
+    Metrosystem:Buy Ticket
+    Metrosystem:Pass turnstile
+    Metrosystem:Board Train
+}
+
+EmptyState --> [*] : save state
+
+note bottom of InitialState
+    InitialState represents the creation of the MetroSystem object.
+end note
+
+note bottom of LoadedState
+    LoadedState occurs when a previous state is loaded from a file.
+end note
+
+note bottom of EmptyState
+    EmptyState occurs when starting fresh with no prior state.
+end note
+@enduml

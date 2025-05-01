@@ -1,0 +1,82 @@
+<notes>
+    <note>
+        <fio>Белов Александр Сергеевич</fio>
+        <address>г. Воронеж, ул. Маяковского, д. 12, кв. 9</address>
+        <date_birth>11.01.1984</date_birth>
+        <getting_date>14.02.2025</getting_date>
+        <fio_doctor>Орлова Наталья Владимировна</fio_doctor>
+        <conclusion>Гипотиреоз, гормоны</conclusion>
+    </note>
+    <note>
+        <fio>Волкова Мария Алексеевна</fio>
+        <address>г. Пермь, ул. Солнечная, д. 5, кв. 13</address>
+        <date_birth>25.04.1991</date_birth>
+        <getting_date>28.01.2025</getting_date>
+        <fio_doctor>Крылов Артём Викторович</fio_doctor>
+        <conclusion>Депрессия, терапия</conclusion>
+    </note>
+    <note>
+        <fio>Зайцев Илья Петрович</fio>
+        <address>г. Омск, ул. Зелёная, д. 8, кв. 4</address>
+        <date_birth>07.12.1986</date_birth>
+        <getting_date>09.02.2025</getting_date>
+        <fio_doctor>Соловьёва Ирина Борисовна</fio_doctor>
+        <conclusion>Язва желудка</conclusion>
+    </note>
+    <note>
+        <fio>Комаров Владислав Денисович</fio>
+        <address>г. Самара, ул. Горького, д. 11, кв. 21</address>
+        <date_birth>16.02.1979</date_birth>
+        <getting_date>30.01.2025</getting_date>
+        <fio_doctor>Михайлов Андрей Олегович</fio_doctor>
+        <conclusion>Грыжа позвоночника</conclusion>
+    </note>
+    <note>
+        <fio>Миронова Елена Валерьевна</fio>
+        <address>г. Челябинск, ул. Парковая, д. 17, кв. 10</address>
+        <date_birth>23.05.1994</date_birth>
+        <getting_date>18.02.2025</getting_date>
+        <fio_doctor>Новиков Павел Сергеевич</fio_doctor>
+        <conclusion>Анемия, препараты железа</conclusion>
+    </note>
+    <note>
+        <fio>Тарасов Дмитрий Игоревич</fio>
+        <address>г. Красноярск, ул. Луговая, д. 22, кв. 6</address>
+        <date_birth>04.09.1983</date_birth>
+        <getting_date>07.02.2025</getting_date>
+        <fio_doctor>Филиппова Анна Дмитриевна</fio_doctor>
+        <conclusion>Пневмония, антибиотики</conclusion>
+    </note>
+    <note>
+        <fio>Фролова Алина Викторовна</fio>
+        <address>г. Волгоград, ул. Речная, д. 13, кв. 18</address>
+        <date_birth>31.07.1996</date_birth>
+        <getting_date>21.02.2025</getting_date>
+        <fio_doctor>Данилов Максим Андреевич</fio_doctor>
+        <conclusion>Киста яичника</conclusion>
+    </note>
+    <note>
+        <fio>Шестаков Антон Владимирович</fio>
+        <address>г. Саратов, ул. Школьная, д. 4, кв. 3</address>
+        <date_birth>08.10.1988</date_birth>
+        <getting_date>11.02.2025</getting_date>
+        <fio_doctor>Егорова Татьяна Сергеевна</fio_doctor>
+        <conclusion>Гастроэнтерит</conclusion>
+    </note>
+    <note>
+        <fio>Яковлев Роман Александрович</fio>
+        <address>г. Тверь, ул. Новая, д. 19, кв. 14</address>
+        <date_birth>26.06.1997</date_birth>
+        <getting_date>16.02.2025</getting_date>
+        <fio_doctor>Сергеев Владимир Иванович</fio_doctor>
+        <conclusion>Вегетососудистая дистония</conclusion>
+    </note>
+    <note>
+        <fio>Герасимова Ольга Николаевна</fio>
+        <address>г. Иркутск, ул. Сосновая, д. 2, кв. 16</address>
+        <date_birth>13.03.1981</date_birth>
+        <getting_date>24.02.2025</getting_date>
+        <fio_doctor>Кузьмин Алексей Викторович</fio_doctor>
+        <conclusion>Остеохондроз</conclusion>
+    </note>
+</notes>

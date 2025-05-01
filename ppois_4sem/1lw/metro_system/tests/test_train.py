@@ -18,10 +18,28 @@ class TestTrain(unittest.TestCase):
         self.assertTrue(self.train.is_running)
         self.assertEqual(self.train.distance, 3)
 
+   
+    def test_boarding_passengers(self):
+        self.assertFalse(self.train.boarding_passengers())
+        self.train.start_train()
+        self.assertTrue(self.train.boarding_passengers())
+
     def test_calculate_arrival_time(self):
+        self.train = Train()
         self.train.distance = 40
         self.train.speed = 40
         self.assertEqual(self.train.calculate_arrival_time(), 60)
+    
+    def test_calculate_zero_speed(self):
+        
+        self.train.distance = 50
+        self.train.speed = 0
+        self.assertEqual(self.train.calculate_arrival_time(), 0)
+
+    def test_calculate_zero_distance(self):
+        self.train.distance = 0
+        self.train.speed = 40
+        self.assertEqual(self.train.calculate_arrival_time(), 0)
 
 if __name__ == '__main__':
     unittest.main()

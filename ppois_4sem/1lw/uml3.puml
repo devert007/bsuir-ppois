@@ -1,0 +1,8 @@
+@startuml State 
+
+[*] --> ShowMenu
+ShowMenu --> [*] : save state
+ShowMenu : operations
+
+
+@enduml

@@ -63,17 +63,20 @@ class Passenger:
             if minutes is not None:
                 if minutes > 0:
                     print(f"Ожидание поезда {minutes} минут...")
-                    time.sleep(minutes * 60)  # Реальное ожидание в минутах (для теста можно уменьшить до seconds)
+                    time.sleep(minutes * 60) 
                 self.station.train_arrives()
                 if self.station.platform.current_train.boarding_passengers():
                     self.progress = 4
                     print(f"{self.name} сел в поезд после ожидания.")
             else:
-                self.station.train_departs()  # Запускаем поезд для следующего прибытия
-                minutes = self.station.schedule.show_next_arrival()
-                print(f"Ожидание поезда {minutes} минут...")
-                time.sleep(minutes * 60)  # Реальное ожидание в минутах
-                self.station.train_arrives()
-                if self.station.platform.current_train.boarding_passengers():
-                    self.progress = 4
-                    print(f"{self.name} сел в поезд после ожидания.")
+                if minutes is not None:
+                    self.station.train_departs()  
+                    minutes = self.station.schedule.show_next_arrival()
+                    print(f"Ожидание поезда {minutes} минут...")
+                    time.sleep(minutes * 60)
+                    self.station.train_arrives()
+                    if self.station.platform.current_train.boarding_passengers():
+                        self.progress = 4
+                        print(f"{self.name} сел в поезд после ожидания.")
+                else:
+                    print(f"{self.name}: нет информации о следующем поезде.")

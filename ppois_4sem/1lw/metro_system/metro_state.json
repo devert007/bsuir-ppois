@@ -1,0 +1,13 @@
+{
+    "stations": [
+        {
+            "name": "new"
+        }
+    ],
+    "passenger": {
+        "name": "ivan",
+        "money": 4,
+        "progress": 3,
+        "station": "new"
+    }
+}

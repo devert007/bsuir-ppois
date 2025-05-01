@@ -10,8 +10,7 @@ class MetroSystem:
         self.branches = []
         self.passenger = None  
 
-    def add_station(self) -> Station:
-        station_name = input("Введите имя станции: ")
+    def add_station(self,station_name) -> Station:
         new_station = Station(station_name)
         self.stations.append(new_station)
         print(f"Станция {station_name} добавлена.")
@@ -73,7 +72,8 @@ def main() -> None:
         elif command == "load":
             metro_system.load_state()
         elif command == "add_station":
-            metro_system.add_station()
+            station_name = input("Введите имя станции: ")
+            metro_system.add_station(station_name)
         elif command == "create_passenger":
             name = input("Введите имя пассажира: ")
             metro_system.create_passenger(name, 5)

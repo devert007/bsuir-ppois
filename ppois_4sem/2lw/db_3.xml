@@ -1,0 +1,82 @@
+<notes>
+    <note>
+        <fio>Борисов Андрей Викторович</fio>
+        <address>г. Нижний Новгород, ул. Гоголя, д. 7, кв. 10</address>
+        <date_birth>20.08.1977</date_birth>
+        <getting_date>02.03.2025</getting_date>
+        <fio_doctor>Ларина Екатерина Михайловна</fio_doctor>
+        <conclusion>Гипертонический криз</conclusion>
+    </note>
+    <note>
+        <fio>Дмитриева Анастасия Олеговна</fio>
+        <address>г. Калининград, ул. Балтийская, д. 14, кв. 5</address>
+        <date_birth>09.11.1990</date_birth>
+        <getting_date>05.03.2025</getting_date>
+        <fio_doctor>Романов Игорь Сергеевич</fio_doctor>
+        <conclusion>Хронический бронхит</conclusion>
+    </note>
+    <note>
+        <fio>Егоров Павел Дмитриевич</fio>
+        <address>г. Хабаровск, ул. Дальневосточная, д. 25, кв. 8</address>
+        <date_birth>15.04.1983</date_birth>
+        <getting_date>10.03.2025</getting_date>
+        <fio_doctor>Семёнова Ольга Владимировна</fio_doctor>
+        <conclusion>Панкреатит, диета</conclusion>
+    </note>
+    <note>
+        <fio>Жукова Виктория Игоревна</fio>
+        <address>г. Ярославль, ул. Свободы, д. 3, кв. 12</address>
+        <date_birth>27.01.1995</date_birth>
+        <getting_date>12.03.2025</getting_date>
+        <fio_doctor>Горбачёв Денис Алексеевич</fio_doctor>
+        <conclusion>Миопия, подбор очков</conclusion>
+    </note>
+    <note>
+        <fio>Королёв Артём Сергеевич</fio>
+        <address>г. Владимир, ул. Мира, д. 9, кв. 7</address>
+        <date_birth>03.07.1988</date_birth>
+        <getting_date>15.03.2025</getting_date>
+        <fio_doctor>Тихонова Анна Викторовна</fio_doctor>
+        <conclusion>Грыжа пищевода</conclusion>
+    </note>
+    <note>
+        <fio>Ларина Елена Дмитриевна</fio>
+        <address>г. Брянск, ул. Советская, д. 11, кв. 20</address>
+        <date_birth>18.09.1980</date_birth>
+        <getting_date>18.03.2025</getting_date>
+        <fio_doctor>Мельников Кирилл Олегович</fio_doctor>
+        <conclusion>Ревматоидный артрит</conclusion>
+    </note>
+    <note>
+        <fio>Максимов Иван Андреевич</fio>
+        <address>г. Смоленск, ул. Ленинградская, д. 6, кв. 9</address>
+        <date_birth>22.12.1992</date_birth>
+        <getting_date>20.03.2025</getting_date>
+        <fio_doctor>Осипова Мария Игоревна</fio_doctor>
+        <conclusion>Гастроэзофагеальный рефлюкс</conclusion>
+    </note>
+    <note>
+        <fio>Никитина Дарья Александровна</fio>
+        <address>г. Томск, ул. Северная, д. 8, кв. 15</address>
+        <date_birth>14.05.1987</date_birth>
+        <getting_date>22.03.2025</getting_date>
+        <fio_doctor>Фролов Артём Денисович</fio_doctor>
+        <conclusion>Цистит, антибиотики</conclusion>
+    </note>
+    <note>
+        <fio>Орлов Константин Викторович</fio>
+        <address>г. Иваново, ул. Южная, д. 4, кв. 11</address>
+        <date_birth>06.10.1979</date_birth>
+        <getting_date>25.03.2025</getting_date>
+        <fio_doctor>Зимина Анастасия Сергеевна</fio_doctor>
+        <conclusion>Ишемическая болезнь сердца</conclusion>
+    </note>
+    <note>
+        <fio>Полякова Анна Михайловна</fio>
+        <address>г. Белгород, ул. Рабочая, д. 13, кв. 6</address>
+        <date_birth>29.02.1996</date_birth>
+        <getting_date>28.03.2025</getting_date>
+        <fio_doctor>Кудрявцев Алексей Владимирович</fio_doctor>
+        <conclusion>Гормональный дисбаланс</conclusion>
+    </note>
+</notes>

@@ -1,0 +1,82 @@
+<notes>
+    <note>
+        <fio>Кузнецов Михаил Олегович</fio>
+        <address>г. Москва, ул. Пушкина, д. 10, кв. 5</address>
+        <date_birth>12.05.1978</date_birth>
+        <getting_date>15.01.2025</getting_date>
+        <fio_doctor>Соколова Татьяна Владимировна</fio_doctor>
+        <conclusion>Гипертония, назначены препараты</conclusion>
+    </note>
+    <note>
+        <fio>Иванова Ольга Сергеевна</fio>
+        <address>г. Казань, ул. Гагарина, д. 33, кв. 12</address>
+        <date_birth>22.09.1990</date_birth>
+        <getting_date>03.02.2025</getting_date>
+        <fio_doctor>Петров Алексей Дмитриевич</fio_doctor>
+        <conclusion>Аллергия на пыльцу</conclusion>
+    </note>
+    <note>
+        <fio>Смирнов Артём Игоревич</fio>
+        <address>г. Новосибирск, ул. Кирова, д. 7, кв. 44</address>
+        <date_birth>30.11.1982</date_birth>
+        <getting_date>20.01.2025</getting_date>
+        <fio_doctor>Васильева Марина Юрьевна</fio_doctor>
+        <conclusion>ОРВИ, рекомендован постельный режим</conclusion>
+    </note>
+    <note>
+        <fio>Федорова Екатерина Викторовна</fio>
+        <address>г. Екатеринбург, ул. Лермонтова, д. 25, кв. 8</address>
+        <date_birth>14.07.1987</date_birth>
+        <getting_date>10.02.2025</getting_date>
+        <fio_doctor>Козлов Антон Павлович</fio_doctor>
+        <conclusion>Гастрит, диета №1</conclusion>
+    </note>
+    <note>
+        <fio>Морозов Денис Александрович</fio>
+        <address>г. Сочи, ул. Набережная, д. 3, кв. 19</address>
+        <date_birth>05.04.1995</date_birth>
+        <getting_date>25.01.2025</getting_date>
+        <fio_doctor>Белова Анна Сергеевна</fio_doctor>
+        <conclusion>Спортивная травма колена</conclusion>
+    </note>
+    <note>
+        <fio>Григорьева Анастасия Дмитриевна</fio>
+        <address>г. Краснодар, ул. Советская, д. 14, кв. 30</address>
+        <date_birth>18.12.1993</date_birth>
+        <getting_date>05.02.2025</getting_date>
+        <fio_doctor>Ткаченко Игорь Васильевич</fio_doctor>
+        <conclusion>Беременность, 12 недель</conclusion>
+    </note>
+    <note>
+        <fio>Павлов Кирилл Андреевич</fio>
+        <address>г. Владивосток, ул. Морская, д. 9, кв. 11</address>
+        <date_birth>27.08.1980</date_birth>
+        <getting_date>12.02.2025</getting_date>
+        <fio_doctor>Зайцева Ольга Николаевна</fio_doctor>
+        <conclusion>Сахарный диабет 2 типа</conclusion>
+    </note>
+    <note>
+        <fio>Ковалёва Виктория Игоревна</fio>
+        <address>г. Ростов-на-Дону, ул. Садовая, д. 6, кв. 22</address>
+        <date_birth>03.03.1989</date_birth>
+        <getting_date>08.02.2025</getting_date>
+        <fio_doctor>Фёдоров Сергей Викторович</fio_doctor>
+        <conclusion>Мигрень, назначены анализы</conclusion>
+    </note>
+    <note>
+        <fio>Лебедев Станислав Олегович</fio>
+        <address>г. Уфа, ул. Лесная, д. 18, кв. 7</address>
+        <date_birth>19.10.1975</date_birth>
+        <getting_date>17.01.2025</getting_date>
+        <fio_doctor>Медведева Елена Анатольевна</fio_doctor>
+        <conclusion>Артрит, физиотерапия</conclusion>
+    </note>
+    <note>
+        <fio>Семёнова Дарья Павловна</fio>
+        <address>г. Тюмень, ул. Центральная, д. 20, кв. 15</address>
+        <date_birth>09.06.1998</date_birth>
+        <getting_date>22.02.2025</getting_date>
+        <fio_doctor>Гусев Денис Ильич</fio_doctor>
+        <conclusion>Астма, ингалятор</conclusion>
+    </note>
+</notes>

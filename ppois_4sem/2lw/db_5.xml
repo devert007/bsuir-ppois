@@ -1,0 +1,82 @@
+<notes>
+    <note>
+        <fio>Антонов Кирилл Сергеевич</fio>
+        <address>г. Вологда, ул. Центральная, д. 15, кв. 10</address>
+        <date_birth>07.04.1980</date_birth>
+        <getting_date>25.04.2025</getting_date>
+        <fio_doctor>Симонова Елена Владимировна</fio_doctor>
+        <conclusion>Гиперплазия щитовидной железы</conclusion>
+    </note>
+    <note>
+        <fio>Баранов Дмитрий Олегович</fio>
+        <address>г. Мурманск, ул. Морская, д. 7, кв. 3</address>
+        <date_birth>21.07.1992</date_birth>
+        <getting_date>28.04.2025</getting_date>
+        <fio_doctor>Козловский Андрей Викторович</fio_doctor>
+        <conclusion>Синдром хронической усталости</conclusion>
+    </note>
+    <note>
+        <fio>Воронцова Анастасия Игоревна</fio>
+        <address>г. Орёл, ул. Победы, д. 11, кв. 8</address>
+        <date_birth>10.10.1985</date_birth>
+        <getting_date>30.04.2025</getting_date>
+        <fio_doctor>Логинов Денис Алексеевич</fio_doctor>
+        <conclusion>Остеопороз</conclusion>
+    </note>
+    <note>
+        <fio>Голубев Максим Викторович</fio>
+        <address>г. Псков, ул. Некрасова, д. 6, кв. 12</address>
+        <date_birth>02.02.1998</date_birth>
+        <getting_date>02.05.2025</getting_date>
+        <fio_doctor>Рябова Ольга Сергеевна</fio_doctor>
+        <conclusion>Бронхиальная астма</conclusion>
+    </note>
+    <note>
+        <fio>Данилова Кристина Андреевна</fio>
+        <address>г. Ставрополь, ул. Ленина, д. 9, кв. 5</address>
+        <date_birth>16.09.1991</date_birth>
+        <getting_date>05.05.2025</getting_date>
+        <fio_doctor>Фомин Артём Дмитриевич</fio_doctor>
+        <conclusion>Мигрень с аурой</conclusion>
+    </note>
+    <note>
+        <fio>Ермаков Игорь Витальевич</fio>
+        <address>г. Тула, ул. Московская, д. 13, кв. 7</address>
+        <date_birth>23.12.1983</date_birth>
+        <getting_date>08.05.2025</getting_date>
+        <fio_doctor>Степанова Мария Игоревна</fio_doctor>
+        <conclusion>Гиперхолестеринемия</conclusion>
+    </note>
+    <note>
+        <fio>Жданова Виктория Сергеевна</fio>
+        <address>г. Улан-Удэ, ул. Байкальская, д. 4, кв. 9</address>
+        <date_birth>05.05.1988</date_birth>
+        <getting_date>10.05.2025</getting_date>
+        <fio_doctor>Котов Илья Викторович</fio_doctor>
+        <conclusion>Фибромиалгия</conclusion>
+    </note>
+    <note>
+        <fio>Зимин Артём Денисович</fio>
+        <address>г. Череповец, ул. Металлургов, д. 8, кв. 11</address>
+        <date_birth>28.03.1995</date_birth>
+        <getting_date>12.05.2025</getting_date>
+        <fio_doctor>Лапина Анна Викторовна</fio_doctor>
+        <conclusion>Синдром раздражённого кишечника</conclusion>
+    </note>
+    <note>
+        <fio>Исаева Дарья Олеговна</fio>
+        <address>г. Якутск, ул. Арктическая, д. 10, кв. 2</address>
+        <date_birth>14.06.1989</date_birth>
+        <getting_date>15.05.2025</getting_date>
+        <fio_doctor>Морозов Владислав Игоревич</fio_doctor>
+        <conclusion>Аутоиммунный тиреоидит</conclusion>
+    </note>
+    <note>
+        <fio>Калашников Алексей Викторович</fio>
+        <address>г. Кострома, ул. Волжская, д. 5, кв. 14</address>
+        <date_birth>31.01.1987</date_birth>
+        <getting_date>18.05.2025</getting_date>
+        <fio_doctor>Субботина Екатерина Дмитриевна</fio_doctor>
+        <conclusion>Псориаз</conclusion>
+    </note>
+</notes>

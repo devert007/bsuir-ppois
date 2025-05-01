@@ -1,0 +1,57 @@
+{
+    "game_settings": {
+        "screen_width": 1200,
+        "screen_height": 800,
+        "fps": 120,
+        "font": "arial",
+        "font_size": 24,
+        "title_font": "verdana",
+        "title_font_size": 104,
+        "menu_font_size": 48
+    },
+    "levels": {
+        "1": {
+            "game_timer": 120,
+            "gif_spawn_interval": 10,
+            "special_gif_interval": 30,
+            "object_speed": 3,
+            "scroll_speed": 5,
+            "initial_pistols": 5,
+            "reload_delay": 2
+        }
+    },
+    "entities": {
+        "gun": {
+            "patron_image": "img/patron.png",
+            "patron_scale": [80, 50],
+            "initial_pistols": 5
+        },
+        "gif_object": {
+            "default_gif": "img/moorhuhn0477.gif",
+            "left_gif": "img/moorhuhn0477left.gif",
+            "special_gif": "img/moorhuhn_001.gif",
+            "special_gif_replace": "img/moorhuhn_002.gif",
+            "min_size": 30,
+            "max_size": 100,
+            "special_size": 200
+        },
+        "background": {
+            "layers": ["img/b1.png", "img/b3.png"],
+            "parallax_factors": [0.7, 1.0],
+            "bg_width": 2400,
+            "bg_height": 800
+        },
+        "cursor": {
+            "image": "img/cursor.png",
+            "scale": [32, 32]
+        },
+        "sounds": {
+            "shot": "sound/boom.mp3",
+            "chicken": "sound/chicken.mp3",
+            "reload": "sound/perezaryad.mp3",
+            "menu_music": "sound/menu.mp3",
+            "game_music": "sound/game.mp3",
+            "volume": 0.1
+        }
+    }
+}

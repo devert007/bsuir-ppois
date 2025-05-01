@@ -1,0 +1,82 @@
+<notes>
+    <note>
+        <fio>Родионов Сергей Игоревич</fio>
+        <address>г. Курск, ул. Заводская, д. 5, кв. 14</address>
+        <date_birth>01.04.1981</date_birth>
+        <getting_date>01.04.2025</getting_date>
+        <fio_doctor>Беляева Елена Анатольевна</fio_doctor>
+        <conclusion>Гиповитаминоз</conclusion>
+    </note>
+    <note>
+        <fio>Сазонова Марина Викторовна</fio>
+        <address>г. Липецк, ул. Партизанская, д. 10, кв. 8</address>
+        <date_birth>12.07.1993</date_birth>
+        <getting_date>03.04.2025</getting_date>
+        <fio_doctor>Громов Павел Сергеевич</fio_doctor>
+        <conclusion>Вегетативная дисфункция</conclusion>
+    </note>
+    <note>
+        <fio>Тимофеев Артём Николаевич</fio>
+        <address>г. Оренбург, ул. Проспектная, д. 17, кв. 3</address>
+        <date_birth>25.11.1984</date_birth>
+        <getting_date>05.04.2025</getting_date>
+        <fio_doctor>Калинина Ирина Олеговна</fio_doctor>
+        <conclusion>Ожирение, диетолог</conclusion>
+    </note>
+    <note>
+        <fio>Устинова Ольга Дмитриевна</fio>
+        <address>г. Пенза, ул. Садовая, д. 21, кв. 9</address>
+        <date_birth>08.03.1989</date_birth>
+        <getting_date>08.04.2025</getting_date>
+        <fio_doctor>Мартынов Денис Игоревич</fio_doctor>
+        <conclusion>Атопический дерматит</conclusion>
+    </note>
+    <note>
+        <fio>Федосеев Денис Андреевич</fio>
+        <address>г. Рязань, ул. Весенняя, д. 7, кв. 12</address>
+        <date_birth>17.06.1997</date_birth>
+        <getting_date>10.04.2025</getting_date>
+        <fio_doctor>Сорокина Анна Витальевна</fio_doctor>
+        <conclusion>Сколиоз, ЛФК</conclusion>
+    </note>
+    <note>
+        <fio>Харитонова Екатерина Сергеевна</fio>
+        <address>г. Тамбов, ул. Лесная, д. 14, кв. 5</address>
+        <date_birth>30.09.1986</date_birth>
+        <getting_date>12.04.2025</getting_date>
+        <fio_doctor>Куликов Михаил Александрович</fio_doctor>
+        <conclusion>Хронический тонзиллит</conclusion>
+    </note>
+    <note>
+        <fio>Цветков Алексей Владимирович</fio>
+        <address>г. Ульяновск, ул. Гагарина, д. 8, кв. 11</address>
+        <date_birth>04.12.1991</date_birth>
+        <getting_date>15.04.2025</getting_date>
+        <fio_doctor>Орлова Татьяна Дмитриевна</fio_doctor>
+        <conclusion>Гастродуоденит</conclusion>
+    </note>
+    <note>
+        <fio>Чернова Алина Игоревна</fio>
+        <address>г. Чебоксары, ул. Ломоносова, д. 3, кв. 7</address>
+        <date_birth>19.01.1994</date_birth>
+        <getting_date>18.04.2025</getting_date>
+        <fio_doctor>Власов Артём Сергеевич</fio_doctor>
+        <conclusion>Поликистоз яичников</conclusion>
+    </note>
+    <note>
+        <fio>Шубин Владимир Алексеевич</fio>
+        <address>г. Чита, ул. Горная, д. 9, кв. 4</address>
+        <date_birth>13.08.1982</date_birth>
+        <getting_date>20.04.2025</getting_date>
+        <fio_doctor>Гаврилова Наталья Игоревна</fio_doctor>
+        <conclusion>Невралгия</conclusion>
+    </note>
+    <note>
+        <fio>Щербакова Дарья Андреевна</fio>
+        <address>г. Архангельск, ул. Полярная, д. 12, кв. 6</address>
+        <date_birth>26.05.1999</date_birth>
+        <getting_date>22.04.2025</getting_date>
+        <fio_doctor>Терехов Иван Викторович</fio_doctor>
+        <conclusion>Авитаминоз</conclusion>
+    </note>
+</notes>
