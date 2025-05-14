@@ -32,36 +32,35 @@ async function createStation() {
 
 let selectedStationId = null;
 
-    async function loadStations() {
-        try {
-            const response = await fetch('/choose_station');
-            const data = await response.json();
-            const stationList = document.getElementById('stationList');
-            stationList.innerHTML = '';
+async function loadStations() {
+  try {
+      const response = await fetch('/choose_station');
+      const data = await response.json();
+      const stationList = document.getElementById('stationList');
+      stationList.innerHTML = '';
 
-            data.stations.forEach(station => {
-                const div = document.createElement('div');
-                div.className = 'station-item';
-                div.innerHTML = `
-                    <h3>${station.name}</h3>
-                    <p>Line: ${station.line}</p>
-                `;
-                
-                // Обработчик выбора станции
-                div.addEventListener('click', () => {
-                  document.querySelectorAll('.station-item').forEach(item => {
-                      item.classList.remove('selected');
-                  });
-                  div.classList.add('selected');
-                  selectedStationId = station.id;  
+      data.stations.forEach(station => {
+          const div = document.createElement('div');
+          div.className = 'station-item';
+          div.innerHTML = `
+              <h3>${station.name}</h3>
+                  <p>Line: ${station.line}</p>
+          `;
+          
+          div.addEventListener('click', () => {
+              document.querySelectorAll('.station-item').forEach(item => {
+                  item.classList.remove('selected');
               });
+              div.classList.add('selected');
+              selectedStationId = station.id;  
+          });
 
-                stationList.appendChild(div);
-            });
-        } catch (error) {
-            console.error("Error loading stations:", error);
-        }
-    }
+          stationList.appendChild(div);
+      });
+  } catch (error) {
+      console.error("Error loading stations:", error);
+  }
+}
 
     // Обработчик для кнопки "Choose station"
     document.getElementById('chooseStationBtn').addEventListener('click', (e) => {
@@ -74,3 +73,15 @@ let selectedStationId = null;
   });
 
 window.onload = loadStations;
+async function topupPassenger(passengerId, amount) {
+    try {
+        const response = await fetch(`/passengers/${passengerId}/balance`, {
+            method: 'PATCH',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ amount: parseFloat(amount) })
+        });
+        // Обработка ответа
+    } catch (error) {
+        showError(error);
+    }
+} 

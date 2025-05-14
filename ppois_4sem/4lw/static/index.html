@@ -4,94 +4,272 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metro System API</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #2563eb;
+            --danger: #dc2626;
+            --background: #f8fafc;
+            --surface: #ffffff;
+            --text-primary: #1e293b;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            background: var(--background);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             text-align: center;
-            background-color: #083b6e;
-            color:#fff;
         }
-        h1 {
-            color: #ffffff;
-        }
-        p{color:#fff;}
-        img {
-            max-width: 100%;
 
-            width: auto;
-            height: 200px;
-            border-radius: 10px;
-            margin-top: 20px;
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            letter-spacing: -0.05em;
         }
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #1e94ef;
+
+        .header p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        .metro-image {
+            width: 100%;
+            max-width: 800px;
+            height: 300px;
+            border-radius: var(--border-radius);
+            object-fit: cover;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .form-container {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 0.875rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .button {
+            padding: 0.875rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .button-primary {
+            background: var(--primary);
             color: white;
-            text-decoration: none;
-            border-radius: 5px;
+            width: 100%;
+            justify-content: center;
         }
-        a:hover {
-            background-color: #0056b3;
+
+        .button-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
         }
+
         #stationList {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .station-item {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease;
+            cursor: pointer;
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .station-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .station-item.selected {
+            border-color: var(--primary);
+            background: rgba(37, 99, 235, 0.03);
+        }
+
+        .station-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .station-line {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .action-buttons {
             display: flex;
-            flex-direction: row;
-            justify-content: space-around;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
 
-        margin: 20px auto;
-        max-width: 600px;
-    }
+        .action-button {
+            padding: 0.875rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
 
-    .station-item {
-        background: #1a4f8b;
-        padding: 15px;
-        margin: 10px 0;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.3s;
-        border: 2px solid transparent;
-    }
+        .action-button.primary {
+            background: var(--primary);
+            color: white;
+        }
 
-    .station-item:hover {
-        background: #2165a3;
-    }
+        .action-button.secondary {
+            background: #e2e8f0;
+            color: var(--text-primary);
+        }
 
-    .station-item.selected {
-        border-color: #1e94ef;
-        transform: scale(1.02);
-    }
+        .action-button:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow);
+        }
 
-    /* Стили для кнопок */
-    .action-buttons {
-        margin-top: 30px;
-    }
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            #stationList {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Welcome to Metro System API</h1>
-    <p>Manage metro stations and passengers with our API.</p>
-    <img src="/static/metro_image.png" alt="Metro System" width="600">
-    <br>
-    <div class="form-container">
-        <h2>Create Station</h2>
-        <form id="create-station-form" onsubmit="event.preventDefault(); createStation()">
-            <input type="text" id="station-name" placeholder="Station Name" required>
-            <input type="text" id="station-line" placeholder="Metro Line" required>
-            <button type="submit">Create Station</button>
-        </form>
-        <p id="message"></p>
-      </div>
-      <div id="stationList"></div>
+    <div class="container">
+        <div class="header">
+            <h1>Metro System Dashboard</h1>
+            <p>Advanced management system for metro infrastructure</p>
+            <img src="/static/metro_image.jpg" class="metro-image" alt="Metro System">
+        </div>
 
-      <div class="action-buttons">
-        <a href="#"  id="chooseStationBtn">Choose station</a>
-        <a href="/docs">Explore API Documentation</a>
+        <div class="form-container">
+            <h2 style="margin-bottom: 1.5rem; color: var(--primary);">Create New Station</h2>
+            <form id="create-station-form" onsubmit="event.preventDefault(); createStation()">
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        id="station-name" 
+                        class="input-field"
+                        placeholder="Enter station name"
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        id="station-line" 
+                        class="input-field"
+                        placeholder="Enter metro line"
+                        required
+                    >
+                </div>
+                <button type="submit" class="button button-primary">
+                    <i class="fas fa-plus-circle"></i>
+                    Create Station
+                </button>
+            </form>
+        </div>
+
+        <div id="stationList"></div>
+
+        <div class="action-buttons">
+            <a href="#" class="action-button primary" id="chooseStationBtn">
+                <i class="fas fa-map-marker-alt"></i>
+                Select Station
+            </a>
+            <a href="/docs" class="action-button secondary">
+                <i class="fas fa-book-open"></i>
+                API Documentation
+            </a>
+        </div>
     </div>
+
+    <script>
+        // Добавьте этот код для красивого отображения уведомлений
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.style.position = 'fixed';
+            notification.style.bottom = '20px';
+            notification.style.right = '20px';
+            notification.style.padding = '1rem 2rem';
+            notification.style.borderRadius = '8px';
+            notification.style.color = 'white';
+            notification.style.fontWeight = '500';
+            notification.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+            notification.style.zIndex = '1000';
+            notification.textContent = message;
+            notification.style.background = type === 'success' ? '#10b981' : '#ef4444';
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+    </script>
+    <script defer src="../static/script.js"></script>
 </body>
-
-
-
-<script defer src="../static/script.js"></script>
 </html>
