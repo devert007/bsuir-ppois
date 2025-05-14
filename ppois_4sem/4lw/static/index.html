@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro System API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #083b6e;
+            color:#fff;
+        }
+        h1 {
+            color: #ffffff;
+        }
+        p{color:#fff;}
+        img {
+            max-width: 100%;
+
+            width: auto;
+            height: 200px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #1e94ef;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+        #stationList {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+        margin: 20px auto;
+        max-width: 600px;
+    }
+
+    .station-item {
+        background: #1a4f8b;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 2px solid transparent;
+    }
+
+    .station-item:hover {
+        background: #2165a3;
+    }
+
+    .station-item.selected {
+        border-color: #1e94ef;
+        transform: scale(1.02);
+    }
+
+    /* Стили для кнопок */
+    .action-buttons {
+        margin-top: 30px;
+    }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Metro System API</h1>
+    <p>Manage metro stations and passengers with our API.</p>
+    <img src="/static/metro_image.png" alt="Metro System" width="600">
+    <br>
+    <div class="form-container">
+        <h2>Create Station</h2>
+        <form id="create-station-form" onsubmit="event.preventDefault(); createStation()">
+            <input type="text" id="station-name" placeholder="Station Name" required>
+            <input type="text" id="station-line" placeholder="Metro Line" required>
+            <button type="submit">Create Station</button>
+        </form>
+        <p id="message"></p>
+      </div>
+      <div id="stationList"></div>
+
+      <div class="action-buttons">
+        <a href="#"  id="chooseStationBtn">Choose station</a>
+        <a href="/docs">Explore API Documentation</a>
+    </div>
+</body>
+
+
+
+<script defer src="../static/script.js"></script>
+</html>
