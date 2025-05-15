@@ -38,5 +38,5 @@ class TableRecords:
             text = self.font.render(f"{i+1}. {name}: {score}", True, (255, 255, 255))
             screen.blit(text, (screen.get_width() // 2 - text.get_width() // 2, 100 + i * 40))
 
-        prompt = self.font.render("Press any key to continue", True, (255, 255, 255))
+        prompt = self.font.render("Press esc key to continue", True, (255, 255, 255))
         screen.blit(prompt, (screen.get_width() // 2 - prompt.get_width() // 2, 400))

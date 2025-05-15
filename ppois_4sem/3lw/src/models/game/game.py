@@ -211,7 +211,7 @@ class Game:
             "",
             "High Scores Screen:",
             "- Displays the top 5 scores with player names.",
-            "- Press any key to return to the main menu.",
+            
             "",
             "Press Esc to return to the game or menu."
         ]
@@ -313,7 +313,7 @@ class Game:
         if self.gif_spawn_timer >= self.gif_spawn_interval:
             self.gif_spawn_timer = 0
             screen_width, screen_height = self.screen.get_size()
-            for _ in range(4):
+            for _ in range(10):
                 size = random.randint(self.config['entities']['gif_object']['min_size'], self.config['entities']['gif_object']['max_size'])
                 y = random.randint(0, screen_height - size)
                 side = random.choice(["left", "right"])
