@@ -51,7 +51,7 @@ async def create_station(station: StationCreate):
     return {"message": "Station created successfully"}
 
 
-@app.get("/station/{station_id}", response_class=HTMLResponse)  # Измените response_class
+@app.get("/station/{station_id}", response_class=HTMLResponse) 
 async def get_station(station_id: int, request: Request): 
     station = db.get_station(station_id)
     if not station:
@@ -91,12 +91,17 @@ async def get_passengers(station_id: int):
 
 @app.patch("/passengers/{passenger_id}/balance")
 async def update_balance(passenger_id: int, update: BalanceUpdate):
-    if update.amount <= 0:
-        raise HTTPException(400, detail="Amount must be positive")
+    passenger = db.get_passenger(passenger_id)  
+    if not passenger:
+        raise HTTPException(404, detail="Passenger not found")
+    
+    if update.amount < 0 and abs(update.amount) > passenger['balance']:
+        raise HTTPException(400, detail="Insufficient funds")
     
     success = db.update_passenger_balance(passenger_id, update.amount)
     if not success:
-        raise HTTPException(404, detail="Passenger not found")
+        raise HTTPException(400, detail="Balance update failed")
+    
     return {"message": "Balance updated successfully"}
 
 @app.patch("/passengers/{passenger_id}/tariff")

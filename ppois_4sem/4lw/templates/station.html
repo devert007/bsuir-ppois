@@ -280,20 +280,20 @@
                         </div>
                     </div>
                     <div class="actions-container">
-                        <div class="action-group">
+                         <div class="action-group">
                             <input 
                                 type="number" 
                                 class="topup-input" 
                                 placeholder="Amount"
-                                id="topup-${passenger.id}"
+                                id="balance-${passenger.id}"
                                 step="0.01"
                                 min="0"
                             >
-                            <button 
-                                class="button button-success"
-                                onclick="topupPassenger(${passenger.id})"
-                            >
-                                <i class="fas fa-coins"></i>
+                            <button class="button button-success" onclick="adjustBalance(${passenger.id}, 'add')">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <button class="button button-warning" onclick="adjustBalance(${passenger.id}, 'subtract')">
+                                <i class="fas fa-minus"></i>
                             </button>
                         </div>
                         
@@ -324,6 +324,42 @@
             });
         }
 
+        async function adjustBalance(passengerId, operation) {
+    const input = document.getElementById(`balance-${passengerId}`);
+    let amount = parseFloat(input.value);
+
+    if (isNaN(amount) || amount <= 0) {
+        showNotification('Please enter valid positive amount', 'warning');
+        return;
+    }
+
+    // Для списания делаем сумму отрицательной
+    if (operation === 'subtract') {
+        amount = -amount;
+    }
+
+    try {
+        const response = await fetch(`/passengers/${passengerId}/balance`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ amount }),
+        });
+
+        if (response.ok) {
+            const action = operation === 'add' ? 'Added' : 'Subtracted';
+            showNotification(`${action} $${Math.abs(amount).toFixed(2)}`, 'success');
+            input.value = '';
+            await loadPassengers({{ station.id }});
+        } else {
+            const error = await response.json();
+            showNotification(error.detail, 'error');
+        }
+    } catch (error) {
+        showNotification('Network error', 'error');
+    }
+}
         // Create new passenger
         async function createPassenger(stationId) {
             const nameInput = document.getElementById('passengerName');
@@ -357,36 +393,36 @@
         }
 
         // Top up balance
-        async function topupPassenger(passengerId) {
-            const input = document.getElementById(`topup-${passengerId}`);
-            const amount = parseFloat(input.value);
+        // async function topupPassenger(passengerId) {
+        //     const input = document.getElementById(`topup-${passengerId}`);
+        //     const amount = parseFloat(input.value);
 
-            if (!amount || amount <= 0) {
-                showNotification('Please enter valid amount', 'warning');
-                return;
-            }
+        //     if (!amount || amount <= 0) {
+        //         showNotification('Please enter valid amount', 'warning');
+        //         return;
+        //     }
 
-            try {
-                const response = await fetch(`/passengers/${passengerId}/balance`, {
-                    method: 'PATCH',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ amount }),
-                });
+        //     try {
+        //         const response = await fetch(`/passengers/${passengerId}/balance`, {
+        //             method: 'PATCH',
+        //             headers: {
+        //                 'Content-Type': 'application/json',
+        //             },
+        //             body: JSON.stringify({ amount }),
+        //         });
 
-                if (response.ok) {
-                    showNotification(`Added $${amount.toFixed(2)}`, 'success');
-                    input.value = '';
-                    await loadPassengers({{ station.id }});
-                } else {
-                    const error = await response.json();
-                    showNotification(error.detail, 'error');
-                }
-            } catch (error) {
-                showNotification('Network error', 'error');
-            }
-        }
+        //         if (response.ok) {
+        //             showNotification(`Added $${amount.toFixed(2)}`, 'success');
+        //             input.value = '';
+        //             await loadPassengers({{ station.id }});
+        //         } else {
+        //             const error = await response.json();
+        //             showNotification(error.detail, 'error');
+        //         }
+        //     } catch (error) {
+        //         showNotification('Network error', 'error');
+        //     }
+        // }
 
         // Update tariff
         async function updateTariff(passengerId, tariffId) {
